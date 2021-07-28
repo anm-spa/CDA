@@ -40,11 +40,12 @@ All methods compute the control closure of Np which is a subset of all CFG nodes
   * WCC (Danicic's algorithm): : 1, 2, 3, 5, 6, 7, 9, 10
   * SCC (Danicic's algorithm): : 1, 2, 3, 5, 6, 7, 9, 10
   * Func: S_magic_methcall1, nCFG: 12, NPsize: 7, WCCFast exec time: 109, WCCDanicic exec time: 352, SCCFast exec time: 207, SCCDanicic exec time: 1815 
-  * WCC res in both method same 
-  * SCC res in both method OK
+  * WCC res in both methods are same 
+  * SCC res in both methods are same
   
-  * SourceFile: mg.c CFG size: 1303, time (WCC fast): 109, time (WCC Danicic): 352, time (SCC fast): 207, time (SCC Danicic): 1815, WCC Result matchs
-, SCC Result matchs
+  * SourceFile: mg.c CFG size: 1303, time (WCC fast): 109, time (WCC Danicic): 352, time (SCC fast): 207, time (SCC Danicic): 1815
+  * WCC Result matchs
+  * SCC Result matchs
 
 *****ALL TIMES ARE MEASURED IN MILLISECONDS
 
