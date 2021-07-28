@@ -242,21 +242,21 @@ public:
             std::string ostr="Func: " + (*ib).first + ", nCFG: " + to_string((*ib).second.procInfo.NCFG)+", NPsize: "+to_string((*ib).second.procInfo.Npsize);
             
             if((*ib).second.iswccfast)
-                ostr=ostr+ ", WCCFast: " +to_string((*ib).second.WCCFast.timeCC);
+                ostr=ostr+ ", WCCFast exec time: " +to_string((*ib).second.WCCFast.timeCC);
             
             if((*ib).second.iswccdanicic)
-                ostr=ostr+ ", WCCDanicic: " +to_string((*ib).second.WCCDanicic.timeCC);
+                ostr=ostr+ ", WCCDanicic exec time: " +to_string((*ib).second.WCCDanicic.timeCC);
             
             if((*ib).second.issccfast)
-                ostr=ostr+ ", SCCFast: " +to_string((*ib).second.SCCFast.timeCC);
+                ostr=ostr+ ", SCCFast exec time: " +to_string((*ib).second.SCCFast.timeCC);
             
             if((*ib).second.issccdanicic)
-                ostr=ostr+ ", SCCDanicic: " +to_string((*ib).second.SCCDanicic.timeCC);
+                ostr=ostr+ ", SCCDanicic exec time: " +to_string((*ib).second.SCCDanicic.timeCC);
                 
-            if((*ib).second.isComWCC && (*ib).second.diffWCC) ostr=ostr+ " WCC res differes ";
-            else if((*ib).second.isComWCC && !(*ib).second.diffWCC) ostr=ostr+ " WCC res OK";
-            if((*ib).second.isComSCC && (*ib).second.diffSCC) ostr=ostr+ " SCC res differes ";
-            else if((*ib).second.isComSCC && !(*ib).second.diffSCC)ostr=ostr+ " SCC res OK";
+            if((*ib).second.isComWCC && (*ib).second.diffWCC) ostr=ostr+ "\n WCC res in both methods differs ";
+            else if((*ib).second.isComWCC && !(*ib).second.diffWCC) ostr=ostr+ "\n WCC res in both methods are same";
+            if((*ib).second.isComSCC && (*ib).second.diffSCC) ostr=ostr+ "\n SCC res in both methods differs ";
+            else if((*ib).second.isComSCC && !(*ib).second.diffSCC)ostr=ostr+ "\n SCC res in both methods are same";
             ostr=ostr+"\n";
             debug_print("--------------------\n", dl, 1);
             debug_print((*ib).second.procInfo.Np, "Nodes in Nprime: ", dl, 1);
@@ -277,12 +277,14 @@ public:
         if(wd) std::cout<<", time (WCC Danicic): "<<tWccDanicic;
         if(sf) std::cout<<", time (SCC fast): "<<tSccfast;
         if(sd) std::cout<<", time (SCC Danicic): "<<tSccDanicic;
-        if(!diffWCC && wf && wd) std::cout<<", WCC Result matchs\n";
-        if(diffWCC && wf && wd) std::cout<<", WCC Result differs\n";
+        if(!diffWCC && wf && wd) std::cout<<"\n WCC Result matchs";
+        if(diffWCC && wf && wd) std::cout<<"\n WCC Result differs";
 
-        if(!diffSCC && sf && sd) std::cout<<", SCC Result matchs\n";
-        if(diffSCC && sf && sd) std::cout<<", SCC Result differs\n";
+        if(!diffSCC && sf && sd) std::cout<<"\n SCC Result matchs";
+        if(diffSCC && sf && sd) std::cout<<"\n SCC Result differs";
         std::cout<<"\n";
+        std::cout<<"*****ALL TIMES ARE MEASURED IN MILLISECONDS\n";
+
     }
     
 };
