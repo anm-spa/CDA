@@ -47,7 +47,4 @@ All methods compute the control closure of Np which is a subset of all CFG nodes
   * WCC Result matchs
   * SCC Result matchs
 
-*****ALL TIMES ARE MEASURED IN MILLISECONDS
-
-
-
+*****ALL TIMES ARE MEASURED IN MICROSECONDS
